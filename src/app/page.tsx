@@ -2,7 +2,8 @@ import GithubCard from "@/components/github-card";
 import Roles from "@/components/roles";
 import Image from "next/image";
 import Link from "next/link";
-import { FaDiscord, FaGithub } from "react-icons/fa";
+import { FaDiscord, FaGithub, FaReddit } from "react-icons/fa";
+import { SiMyanimelist } from "react-icons/si";
 
 export default function Home() {
   return (
@@ -27,6 +28,12 @@ export default function Home() {
             </Link>
             <Link href="/discord" className="mt-1 mr-1">
               <FaDiscord size={25} />
+            </Link>
+            <Link href="/reddit" className="mt-1 mr-1">
+              <FaReddit size={25} />
+            </Link>
+            <Link href="/mal" className="mt-1 mr-1">
+              <SiMyanimelist size={25} />
             </Link>
           </div>
         </div>
