@@ -5,6 +5,7 @@ import Providers from "@/components/providers";
 import { cn } from "@/lib/utils";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -39,7 +40,7 @@ export default function RootLayout({
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
-          inter.variable
+          inter.variable,
         )}
       >
         <Providers>
@@ -47,6 +48,24 @@ export default function RootLayout({
           <Analytics />
           <SpeedInsights />
         </Providers>
+        <footer className="w-full bg-black py-5">
+          <p className="ml-5 text-white">
+            &copy; 2024{" "}
+            <Link
+              href="https://github.com/mallusrgreatv2"
+              className="underline"
+            >
+              mallusrgreat
+            </Link>{" "}
+            |{" "}
+            <Link
+              href="https://raw.githubusercontent.com/mallusrgreatv2/portfolio/master/LICENSE"
+              className="underline"
+            >
+              MIT License
+            </Link>
+          </p>
+        </footer>
       </body>
     </html>
   );
