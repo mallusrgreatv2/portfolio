@@ -5,12 +5,13 @@ import Providers from "@/components/providers";
 import { cn } from "@/lib/utils";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
   title: "mallusrgreat",
-  description: "Self-taught Indian backend developer",
+  description: "Backend developer",
   keywords: [
     "mallus",
     "developer",
@@ -38,8 +39,8 @@ export default function RootLayout({
       </head>
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          inter.variable
+          "min-h-screen w-full bg-background font-sans antialiased",
+          inter.variable,
         )}
       >
         <Providers>
@@ -47,6 +48,24 @@ export default function RootLayout({
           <Analytics />
           <SpeedInsights />
         </Providers>
+        <footer className="w-full bg-black py-5 text-center">
+          <p className="text-white">
+            &copy; 2024{" "}
+            <Link
+              href="https://github.com/mallusrgreatv2"
+              className="underline"
+            >
+              mallusrgreat
+            </Link>{" "}
+            |{" "}
+            <Link
+              href="https://raw.githubusercontent.com/mallusrgreatv2/portfolio/master/LICENSE"
+              className="underline"
+            >
+              MIT License
+            </Link>
+          </p>
+        </footer>
       </body>
     </html>
   );

@@ -6,7 +6,11 @@ import { Button } from "./ui/button";
 import { BsBoxArrowUpRight } from "react-icons/bs";
 import Link from "next/link";
 import { Skeleton } from "./ui/skeleton";
-export default function GithubCard(options: { repo: string }) {
+import { cn } from "@/lib/utils";
+export default function GithubCard(options: {
+  repo: string;
+  className?: string;
+}) {
   const { data: image, isLoading: loading } = useQuery({
     queryKey: [`image-${options.repo}`],
     queryFn: () =>
@@ -14,13 +18,13 @@ export default function GithubCard(options: { repo: string }) {
   });
   if (!image || loading)
     return (
-      <div className="border p-5 w-fit mt-5">
-        <Skeleton className="w-[300px] h-[150px] m-2" />
+      <div className={cn("mt-5 w-fit border p-5", options.className)}>
+        <Skeleton className="m-2 h-[150px] w-[300px]" />
         <Button className="m-2 w-[300px]">Loading...</Button>
       </div>
     );
   return (
-    <div className="border p-5 w-fit mt-5 mr-6">
+    <div className={cn("mt-5 w-fit border p-5", options.className)}>
       <Image
         src={image}
         alt="Image"
@@ -29,7 +33,7 @@ export default function GithubCard(options: { repo: string }) {
         className="m-2"
       />
       <Link href={`https://github.com/${options.repo}`} target="_blank">
-        <Button className="m-2 w-[300px]">
+        <Button className="m-2 w-[300px] hover:bg-sky-600">
           <BsBoxArrowUpRight />
         </Button>
       </Link>
