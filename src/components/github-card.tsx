@@ -24,9 +24,7 @@ export default function GithubCard(options: {
       </div>
     );
   return (
-    <div
-      className={cn("mt-5 w-fit border bg-slate-100 p-5", options.className)}
-    >
+    <div className={cn("mt-5 w-fit border p-5", options.className)}>
       <Image
         src={image}
         alt="Image"
@@ -35,7 +33,7 @@ export default function GithubCard(options: {
         className="m-2"
       />
       <Link href={`https://github.com/${options.repo}`} target="_blank">
-        <Button className="m-2 w-[300px]">
+        <Button className="m-2 w-[300px] hover:bg-sky-600">
           <BsBoxArrowUpRight />
         </Button>
       </Link>

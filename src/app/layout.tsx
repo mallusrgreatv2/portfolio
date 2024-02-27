@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
   title: "mallusrgreat",
-  description: "Self-taught Indian backend developer",
+  description: "Backend developer",
   keywords: [
     "mallus",
     "developer",
@@ -39,7 +39,7 @@ export default function RootLayout({
       </head>
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased",
+          "min-h-screen w-full bg-background font-sans antialiased",
           inter.variable,
         )}
       >
@@ -48,8 +48,8 @@ export default function RootLayout({
           <Analytics />
           <SpeedInsights />
         </Providers>
-        <footer className="w-full bg-black py-5">
-          <p className="ml-5 text-white">
+        <footer className="w-full bg-black py-5 text-center">
+          <p className="text-white">
             &copy; 2024{" "}
             <Link
               href="https://github.com/mallusrgreatv2"
